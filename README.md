@@ -245,13 +245,41 @@ This index examines all possible sub-sequences within the ciphertext. This index
 Let’s say a binary cipher text is of length N. 
 We have taken a block of 128 and generate 21 features as demonstrated in previous section. 
 Total number of blocks = N/128 = B 
-One datapoint is matrix of (B, 21)
+One datapoint is matrix of (B, 21)<br>
 21 features
 <img width="630" height="1161" alt="image" src="https://github.com/user-attachments/assets/24efd3f7-297c-4234-b1bb-cebc3202be06" />
 
-## Why deep learning? 
+## **Why deep learning? **
 In our research, we opted for a deep learning model instead of a traditional machine learning model due to the complexity and cluttered nature of the features in our dataset. With 21 features, a 3D visualization using techniques like t-SNE and PCA revealed that the feature space was highly non-linear and lacked clear separability. This level of complexity made it challenging for traditional machine learning algorithms to effectively capture the intricate patterns and relationships within the data. 
 
 Deep learning models excel in scenarios where features are high-dimensional and non-linearly correlated, as they are capable of hierarchical feature extraction. This ability to deeply analyze and encode feature interactions is crucial for our dataset, where the underlying structure is obscured in lower dimensions.
 
 Consequently, the deep learning model significantly outperformed traditional machine learning approaches, demonstrating its strength in understanding and leveraging the complex feature space to achieve superior performance.
+
+## **Model architecture**
+<img width="1970" height="516" alt="image" src="https://github.com/user-attachments/assets/36daffb2-b40d-45dd-a03e-7729ce02b841" /><br>
+
+## **Analysis tools used**
+<img width="1658" height="216" alt="image" src="https://github.com/user-attachments/assets/ce42a6e3-eeb9-4649-b3fe-bf7cb2e14e0d" /><br>
+
+## 3d visualization with t-SNE
+<img width="1388" height="1110" alt="image" src="https://github.com/user-attachments/assets/0ffa89a1-9c8b-45aa-be86-ba61427cfbe2" /><br>
+
+## 3d visualization with PCA
+<img width="1388" height="1110" alt="image" src="https://github.com/user-attachments/assets/53a9d112-f24f-4a35-b1dd-e81ff5938bf4" /><br>
+
+## Exploring Test Set
+<img width="1483" height="440" alt="image" src="https://github.com/user-attachments/assets/6ff47ad5-e692-4690-9f15-ea9e080b5311" /><br>
+
+## **Evaluation results on test set**
+Overall Accuracy: 88.60% 
+Average Confidence: 0.83
+## Per-Class analysis
+<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" /><br>
+Best Validation Accuracy: 89.17% 
+Best Epoch: 98
+
+
+
+
+
