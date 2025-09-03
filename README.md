@@ -114,17 +114,17 @@ Algorithm Working:
 to encrypt text files.
 2. It walks through a specified input folder, finds all .txt files, and encrypts them.
 3. Encryption process:
-   - Removes trailing spaces from the plaintext
-   - Pads the text to match AES block size
-   - Converts the text to bytes
-   - Encrypts using a fixed key
-Key Details:
-   - Encryption Mode: AES-ECB (Electronic Codebook)
-   - Key Size: 128 bits (16 bytes)
-   - Block Size: 16 bytes (128 bits)
-   - Key Used: "raunakswamy12345" (exactly 16 bytes)
-Output Characteristics:
-   - Input file: Original .txt file
-   - Output file: .bin file with hexadecimal encrypted content
-   - Encrypted text will be larger than input due to padding
+   - - Removes trailing spaces from the plaintext
+   - - Pads the text to match AES block size
+   - - Converts the text to bytes
+   - - Encrypts using a fixed key
+-Key Details:
+   - - Encryption Mode: AES-ECB (Electronic Codebook)
+   - - Key Size: 128 bits (16 bytes)
+   - - Block Size: 16 bytes (128 bits)
+   - - Key Used: "raunakswamy12345" (exactly 16 bytes)
+- Output Characteristics:
+   - - Input file: Original .txt file
+   - - Output file: .bin file with hexadecimal encrypted content
+   - - Encrypted text will be larger than input due to padding
 Each 16-byte block of input is encrypted independently
