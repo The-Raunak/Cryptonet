@@ -192,7 +192,7 @@ The method analyzes the distribution of 0s and 1s within sub-blocks of the ciphe
 Consider the binary sequence: 1100001111000011110000111100 (n=28) and M=7 (block size)
 So N=4 (Degree of freedom)<br>
 <img width="428" height="277" alt="image" src="https://github.com/user-attachments/assets/5b7adc61-bcd1-4f0d-b2c7-ae7cdc931c80" /><br>
-&emsp;<img width="427" height="54" alt="image" src="https://github.com/user-attachments/assets/4032b9e2-4cea-48bd-a6fb-ba3c6c085ee7" />
+&ensp;<img width="427" height="54" alt="image" src="https://github.com/user-attachments/assets/4032b9e2-4cea-48bd-a6fb-ba3c6c085ee7" />
 
 ### Run test analysis 
 This index looks at consecutive runs of the same bit (0 or 1) in the ciphertext. A run is a maximal sequence of consecutive bits of either all ones or all zeros. A higher runs index might indicate less randomness in the ciphertext, as it suggests longer stretches of the same bit. 
@@ -214,7 +214,7 @@ This index looks at consecutive runs of the same bit (0 or 1) in the ciphertext.
   3. Calculate variance: σ² = (2 * 7 * 3 * (2 * 7 * 3 - 10)) / (10² * 9) ≈ 1.29
   4. Calculate test statistic: Z = (7 - 5.2) / √1.29 ≈ 1.58<br>
   <img width="222" height="47" alt="image" src="https://github.com/user-attachments/assets/600a0987-fa43-4265-8a2b-676e5c8b8968" /><br>
-  &emsp;<img width="217" height="107" alt="image" src="https://github.com/user-attachments/assets/01e4b055-7fed-4dde-bcf3-816f31907977" />
+  &ensp;<img width="217" height="107" alt="image" src="https://github.com/user-attachments/assets/01e4b055-7fed-4dde-bcf3-816f31907977" />
 
 ### Serial test analysis 
 This index examines all possible sub-sequences within the ciphertext. This index helps identify patterns or biases in the sub-sequences of the ciphertext. In a truly random sequence, you'd expect each possible sub-sequence to occur with roughly equal frequency. 
