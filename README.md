@@ -192,6 +192,57 @@ The method analyzes the distribution of 0s and 1s within sub-blocks of the ciphe
 Consider the binary sequence: 1100001111000011110000111100 (n=28) and M=7 (block size)
 So N=4 (Degree of freedom)
 <img width="428" height="277" alt="image" src="https://github.com/user-attachments/assets/5b7adc61-bcd1-4f0d-b2c7-ae7cdc931c80" />
-
 <img width="427" height="54" alt="image" src="https://github.com/user-attachments/assets/4032b9e2-4cea-48bd-a6fb-ba3c6c085ee7" />
 
+### Run test analysis 
+This index looks at consecutive runs of the same bit (0 or 1) in the ciphertext. A run is a maximal sequence of consecutive bits of either all ones or all zeros. A higher runs index might indicate less randomness in the ciphertext, as it suggests longer stretches of the same bit. 
+- Working
+  1. Count the number of runs of each length.
+  2. Compare these counts to the expected counts for a random sequence.
+- Notations and assumptions
+  For a random sequence of length n with n₁ ones and n₀ zeros:
+  - Expected number of runs: e = 1 + (2n₁n₀) / n
+  - Variance of the number of runs: σ² = (2n₁n₀(2n₁n₀ - n)) / (n²(n - 1))
+  The test statistic is: Z = (r - e) / σ
+  Where r is the observed number of runs.
+- Example calculation
+  Consider the binary sequence: 1011010111
+  1. Count runs
+  <img width="230" height="150" alt="image" src="https://github.com/user-attachments/assets/fbbcb6cf-f677-4b95-b45f-c43de427c196" />
+  Total observed number of runs: 7
+  2. Calculate expected runs: n₁ = 7, n₀ = 3, n = 10 e = 1 + (2 * 7 * 3) / 10 = 5.2
+  3. Calculate variance: σ² = (2 * 7 * 3 * (2 * 7 * 3 - 10)) / (10² * 9) ≈ 1.29
+  4. Calculate test statistic: Z = (7 - 5.2) / √1.29 ≈ 1.58
+  <img width="222" height="47" alt="image" src="https://github.com/user-attachments/assets/600a0987-fa43-4265-8a2b-676e5c8b8968" />
+  <img width="217" height="107" alt="image" src="https://github.com/user-attachments/assets/01e4b055-7fed-4dde-bcf3-816f31907977" />
+
+### Serial test analysis 
+This index examines all possible sub-sequences within the ciphertext. This index helps identify patterns or biases in the sub-sequences of the ciphertext. In a truly random sequence, you'd expect each possible sub-sequence to occur with roughly equal frequency. 
+- Working
+  1. Count occurrences of all possible overlapping m-bit patterns. 
+  2. Compare these counts to the expected counts for a random sequence.
+  3. Compute test statistics based on the differences between observed and expected frequencies.
+- Notations and assumptions
+  For a binary sequence of length n and pattern length m:
+  - Expected frequency of each m-bit pattern: n/2^m
+  - Compute ψ²_m and ψ²_(m-1): ψ²_m = (2^m/n) * Σ v²_i - n, where v_i is the frequency of the i-th m-bit pattern ψ²_(m-1) is calculated similarly for (m-1)-bit patterns
+  - Test statistic: ∇ψ²_m = ψ²_m - ψ²_(m-1)
+  - ∇ψ²_m follows a χ² distribution with 2^(m-1) degrees of freedom. Significance alpha = 0.05
+- Example calculation
+   Consider the binary sequence: 0011011101 (length 10)
+   Let's use m = 3 (pattern length) Degree of freedoms = 4
+   1. Count 3-bit patterns
+   <img width="157" height="166" alt="image" src="https://github.com/user-attachments/assets/1badf4e0-9ac3-4b27-b3b6-bc0a09b944ec" />
+   2. Count 2-bit patterns
+   <img width="157" height="97" alt="image" src="https://github.com/user-attachments/assets/c7c13854-a851-49ca-b5c2-49798e8a8bba" />
+   3. Compute ψ²_3 = (2³/10) * (0² + 1² + 0² + 2² + 0² + 2² + 2² + 1²) - 10 ≈ 1.2
+   4. Compute ψ²_2 = (2²/10) * (1² + 3² + 2² + 3²) - 10 ≈ 0.4
+   5. Calculate ∇ψ²_3 = ψ²_3 - ψ²_2 ≈ 0.8
+   6. Calculate p-value: p-value = 1 - CDF(χ²(4), 0.8) ≈ 0.9384
+   <img width="336" height="161" alt="image" src="https://github.com/user-attachments/assets/fd3fe0c8-57cd-4e58-afe7-a5e5ed0ef4eb" />
+
+## How one datapoint looks? 
+Let’s say a binary cipher text is of length N. 
+We have taken a block of 128 and generate 21 features as demonstrated in previous section. 
+Total number of blocks = N/128 = B 
+One datapoint is matrix of (B, 21)
