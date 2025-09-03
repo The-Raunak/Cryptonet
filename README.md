@@ -47,18 +47,18 @@ Here's a concise breakdown of the Kasumi encryption algorithm implementation:
 Algorithm Overview: 
   - Type: Symmetric Block Cipher (Kasumi)
   - Origin: Used in 3G mobile communications security
-Key Characteristics: 
+- Key Characteristics: 
   1. Block Size: 64 bits (8 bytes)
   2. Key Size: 128 bits
   3. Number of Rounds: 8
-Key Generation Process:
+- Key Generation Process:
   - Derives multiple subkeys from master key
   - Uses bit shifting and XOR operations
   - Creates 9 different key arrays:
     - KL1, KL2
     - KO1, KO2, KO3
     - KI1, KI2, KI3
-Encryption Mechanism:
+- Encryption Mechanism:
   1. Key Setup:
   - Transforms master key
   - Generates multiple round-specific keys
@@ -118,7 +118,7 @@ to encrypt text files.
    - Pads the text to match AES block size
    - Converts the text to bytes
    - Encrypts using a fixed key
--Key Details:
+- Key Details:
    - Encryption Mode: AES-ECB (Electronic Codebook)
    - Key Size: 128 bits (16 bytes)
    - Block Size: 16 bytes (128 bits)
