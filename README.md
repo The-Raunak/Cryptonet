@@ -171,4 +171,22 @@ Algorithm Type: El Gamal Encryption with Custom Implementations
 ## Feature extraction from binary sequence 
 ### According to NIST we extract 21 features from 3 methods
 NIST Document link : (A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications) 
-https://drive.google.com/file/d/1xFVxq44DxGM1COcbeucTxRZMAJ5Eo20k/view?usp=sharing
+- https://drive.google.com/file/d/1xFVxq44DxGM1COcbeucTxRZMAJ5Eo20k/view?usp=sharing
+
+### 3 methods and corresponding features
+<img width="477" height="293" alt="image" src="https://github.com/user-attachments/assets/6c05e118-8b19-46ce-85c6-fdf0d03aed0d" />
+
+## How each feature is extracted?
+### Frequency within blocks analysis 
+The method analyzes the distribution of 0s and 1s within sub-blocks of the ciphertext. It helps identify if there are any biases in the distribution of bits within the blocks. In a perfectly random ciphertext, we would expect each block to have about 50% 1s and 50% 0s. 
+Working 
+   1. Divide the input sequence into ‘n’ non-overlapping blocks of ‘M’ bits.
+   2. Determine the proportion of ones in each block. 
+   3. Compare these proportions to the expected value of 0.5 using a chi-square test.
+Notations and assumptions
+For a sequence of length n divided into N = ⌊n/M⌋ blocks of M bits:
+- The test statistic follows a χ² distribution with N degrees of freedom. Significance alpha = 0.05
+- Calculate π_i = (ones in i-th block) / M for each block
+- Compute χ² = 4M * Σ(π_i - 0.5)² for i = 1 to N
+Example calculation
+Consider the binary sequence: 1100001111000011110000111100 (n=28) and M=7 (block size) So N=4 (Degree of freedom)
