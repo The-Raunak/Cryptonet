@@ -128,3 +128,42 @@ to encrypt text files.
    - Output file: .bin file with hexadecimal encrypted content
    - Encrypted text will be larger than input due to padding
 Each 16-byte block of input is encrypted independently
+
+### ElGamal 
+Here's a concise breakdown of the encryption algorithm: 
+Algorithm Type: El Gamal Encryption with Custom Implementations 
+Key Generation Process: 
+- Uses SHA-256 to generate a 128-bit key
+- Generates a prime number (p) close to 2^127
+- Finds a primitive root (g) for the prime
+- Creates public key: (p, g, h)
+- Generates a private key (x)
+Encryption Mechanism:
+   1. Converts input text to bytes
+   2. Breaks message into blocks
+   3. For each block:
+- Generates random k
+- Computes c1 = g^k mod p
+- Computes shared secret s = h^k mod p 
+- Encrypts block as c2 = (message * s) mod p
+Key Characteristics:
+- Prime (p): 128-bit
+- Primitive Root (g): Variable length
+- Public Key Components:
+  - p: 128-bit prime
+  - g: Primitive root
+  - h: Public key element
+    - Private Key (x): Derived from hash, < p-1
+Output Specifications:
+- Converts encrypted blocks to binary string
+- Output saved as .bin file
+- Binary representation of encrypted blocks
+- Output length varies with input text length
+Security Features:
+- Randomized encryption (each encryption differs)
+- Uses Miller-Rabin primality testing
+- Derives keys from input passphrase
+Unique Aspects:
+- Custom prime generation
+- Efficient primitive root finding
+- Block-based encryption approach
