@@ -17,15 +17,15 @@ Moreover the cipher texts are converted to binary so that machine can process it
 To get the secret key required to decrypt that data, authorized recipients publish a public key while retaining an associated private key that only they know. The sender then uses that public key and RSA to encrypt and transmit to each recipient their own secret AES key, which can be used to decrypt the data. 
 Hybrid Encryption Algorithm Details: 
 1. Key Sizes and Encryption Methods:
-   RSA Public Key: 1024 bits (base64 encoded)
-   AES Key: 128 bits (16 bytes)
-   AES Mode: EAX (Encryption with Authentication)
-   Encryption Type: Hybrid (Asymmetric + Symmetric)
+- RSA Public Key: 1024 bits (base64 encoded)
+- AES Key: 128 bits (16 bytes)
+- AES Mode: EAX (Encryption with Authentication)
+- Encryption Type: Hybrid (Asymmetric + Symmetric)
 Encryption Process:
 2. a) AES Encryption:
-   Generates a random 128-bit AES key
-   Encrypts plaintext using AES-EAX mode
-   Produces:
+   - Generates a random 128-bit AES key
+   - Encrypts plaintext using AES-EAX mode
+   - Produces:
      - Ciphertext
      - Nonce (Number used once)
      - Authentication Tag
@@ -33,14 +33,14 @@ Encryption Process:
    Converts encrypted AES key to hexadecimal string
    Encrypts the AES key using the public RSA key
 3. Output Sizes:
-   AES Key: 16 bytes
-   RSA Encrypted AES Key: Approximately 128 bytes (hexadecimal representation) 
-   Nonce: 16 bytes (typical for EAX mode)
-   Authentication Tag: 16 bytes
-   Ciphertext: Same size as original plaintext
+   - AES Key: 16 bytes
+   - RSA Encrypted AES Key: Approximately 128 bytes (hexadecimal representation) 
+   - Nonce: 16 bytes (typical for EAX mode)
+   - Authentication Tag: 16 bytes
+   - Ciphertext: Same size as original plaintext
 4. Block Size:
-   AES Block Size: 128 bits (16 bytes)
-   RSA Public Key Block Size: 1024 bits
+   - AES Block Size: 128 bits (16 bytes)
+   - RSA Public Key Block Size: 1024 bits
 
 ### KASUMI 
 Here's a concise breakdown of the Kasumi encryption algorithm implementation: 
@@ -81,3 +81,50 @@ Encryption Mechanism:
     - Output: Hexadecimal representation
     - Padding: PKCS7-like padding to 64-bit blocks
     - Binary conversion of hex output
+
+### 3DES 
+Encryption Algorithm Details: 
+1. Key Characteristics:
+   - Encryption Algorithm: Triple DES (3DES)
+   - Mode of Operation: ECB (Electronic Codebook)
+   - Key Length: 16 bytes (128 bits)
+   - Block Size: 64 bits (8 bytes)
+2. Encryption Process:
+a) Key Preparation:
+   - Uses a fixed key: `raunakswamy12345`
+   - Key is padded to meet 3DES key requirements
+b) Encryption Steps:
+   - Pad input text to block size
+   - Encrypt using 3DES-ECB mode
+   - Convert encrypted text to hexadecimal
+   - Convert hexadecimal to binary string
+3. Output Sizes:
+   - Key Size: 16 bytes
+   - Block Size: 64 bits
+   - Ciphertext: Padded to multiple of block size (< 8 bytes to 8, < 16 to 16)
+   - Hexadecimal Output: Variable (depends on input text length)
+   - Binary Output: Conversion of hexadecimal
+4. Folder Processing:
+   - Recursively finds .txt files
+   - Encrypts each file individually
+     
+### AES
+Algorithm Working:
+1. The script uses AES (Advanced Encryption Standard) in ECB (Electronic Codebook) mode
+to encrypt text files.
+2. It walks through a specified input folder, finds all .txt files, and encrypts them.
+3. Encryption process:
+   - Removes trailing spaces from the plaintext
+   - Pads the text to match AES block size
+   - Converts the text to bytes
+   - Encrypts using a fixed key
+Key Details:
+   - Encryption Mode: AES-ECB (Electronic Codebook)
+   - Key Size: 128 bits (16 bytes)
+   - Block Size: 16 bytes (128 bits)
+   - Key Used: "raunakswamy12345" (exactly 16 bytes)
+Output Characteristics:
+   - Input file: Original .txt file
+   - Output file: .bin file with hexadecimal encrypted content
+   - Encrypted text will be larger than input due to padding
+Each 16-byte block of input is encrypted independently
