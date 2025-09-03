@@ -1,4 +1,4 @@
-# Cryptonet
+# **Cryptonet**
 This project focuses on developing an approach to identify cryptographic algorithms by analyzing encrypted data, using Artificial Intelligence (AI) and Machine Learning (ML) techniques.
 
 Documentation of Results:
@@ -275,7 +275,7 @@ Consequently, the deep learning model significantly outperformed traditional mac
 Overall Accuracy: 88.60%<br> 
 Average Confidence: 0.83
 ### Per-Class analysis
-<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" width="48"/><br>
+<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" /><br>
 Best Validation Accuracy: 89.17%<br>
 Best Epoch: 98
 
