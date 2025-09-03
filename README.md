@@ -247,29 +247,11 @@ We have taken a block of 128 and generate 21 features as demonstrated in previou
 Total number of blocks = N/128 = B 
 One datapoint is matrix of (B, 21)
 21 features
-{
-'chi_square': ..., 
-'p-value': ..., 
-'avg_prop': ..., 
-'std_dev_prop': ...,
-'max_prop': ..., 
-'min_prop': ...,
-'num_props_over_05': ...,
-
-'z_statistic': ..., 
-'num_runs': ...,
-'num_runs_1': ..., 
-'num_runs_2': ..., 
-'num_runs_3': ..., 
-'num_runs_4_plus': ..., 
-'prop_1s': ...,
-
-'mbit_chisquare': ..., 
-'mbit_pvalue': ..., 
-'mbit_entropy': ..., 
-'max_mbit_freq': ...,
-'min_mbit_freq': ..., 
-'num_missing_mbits': ..., 
-'ratio_observed_to_expected’: ...,
-}
 <img width="630" height="1161" alt="image" src="https://github.com/user-attachments/assets/24efd3f7-297c-4234-b1bb-cebc3202be06" />
+
+## Why deep learning? 
+In our research, we opted for a deep learning model instead of a traditional machine learning model due to the complexity and cluttered nature of the features in our dataset. With 21 features, a 3D visualization using techniques like t-SNE and PCA revealed that the feature space was highly non-linear and lacked clear separability. This level of complexity made it challenging for traditional machine learning algorithms to effectively capture the intricate patterns and relationships within the data. 
+
+Deep learning models excel in scenarios where features are high-dimensional and non-linearly correlated, as they are capable of hierarchical feature extraction. This ability to deeply analyze and encode feature interactions is crucial for our dataset, where the underlying structure is obscured in lower dimensions.
+
+Consequently, the deep learning model significantly outperformed traditional machine learning approaches, demonstrating its strength in understanding and leveraging the complex feature space to achieve superior performance.
