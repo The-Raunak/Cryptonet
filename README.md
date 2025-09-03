@@ -167,3 +167,8 @@ Algorithm Type: El Gamal Encryption with Custom Implementations
    - Custom prime generation
    - Efficient primitive root finding
    - Block-based encryption approach
+
+## Feature extraction from binary sequence 
+### According to NIST we extract 21 features from 3 methods
+NIST Document link : (A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications) 
+https://drive.google.com/file/d/1xFVxq44DxGM1COcbeucTxRZMAJ5Eo20k/view?usp=sharing
