@@ -231,18 +231,45 @@ This index examines all possible sub-sequences within the ciphertext. This index
 - Example calculation
    Consider the binary sequence: 0011011101 (length 10)
    Let's use m = 3 (pattern length) Degree of freedoms = 4
-   1. Count 3-bit patterns
-   <img width="157" height="166" alt="image" src="https://github.com/user-attachments/assets/1badf4e0-9ac3-4b27-b3b6-bc0a09b944ec" />
-   2. Count 2-bit patterns
-   <img width="157" height="97" alt="image" src="https://github.com/user-attachments/assets/c7c13854-a851-49ca-b5c2-49798e8a8bba" />
+   1. Count 3-bit patterns<br>
+   <img width="157" height="166" alt="image" src="https://github.com/user-attachments/assets/1badf4e0-9ac3-4b27-b3b6-bc0a09b944ec" /><br>
+   2. Count 2-bit patterns<br>
+   <img width="157" height="97" alt="image" src="https://github.com/user-attachments/assets/c7c13854-a851-49ca-b5c2-49798e8a8bba" /><br>
    3. Compute ψ²_3 = (2³/10) * (0² + 1² + 0² + 2² + 0² + 2² + 2² + 1²) - 10 ≈ 1.2
    4. Compute ψ²_2 = (2²/10) * (1² + 3² + 2² + 3²) - 10 ≈ 0.4
    5. Calculate ∇ψ²_3 = ψ²_3 - ψ²_2 ≈ 0.8
-   6. Calculate p-value: p-value = 1 - CDF(χ²(4), 0.8) ≈ 0.9384
-   <img width="336" height="161" alt="image" src="https://github.com/user-attachments/assets/fd3fe0c8-57cd-4e58-afe7-a5e5ed0ef4eb" />
+   6. Calculate p-value: p-value = 1 - CDF(χ²(4), 0.8) ≈ 0.9384<br>
+   <img width="336" height="161" alt="image" src="https://github.com/user-attachments/assets/fd3fe0c8-57cd-4e58-afe7-a5e5ed0ef4eb" /><br>
 
 ## How one datapoint looks? 
 Let’s say a binary cipher text is of length N. 
 We have taken a block of 128 and generate 21 features as demonstrated in previous section. 
 Total number of blocks = N/128 = B 
 One datapoint is matrix of (B, 21)
+21 features
+{
+'chi_square': ..., 
+'p-value': ..., 
+'avg_prop': ..., 
+'std_dev_prop': ...,
+'max_prop': ..., 
+'min_prop': ...,
+'num_props_over_05': ...,
+
+'z_statistic': ..., 
+'num_runs': ...,
+'num_runs_1': ..., 
+'num_runs_2': ..., 
+'num_runs_3': ..., 
+'num_runs_4_plus': ..., 
+'prop_1s': ...,
+
+'mbit_chisquare': ..., 
+'mbit_pvalue': ..., 
+'mbit_entropy': ..., 
+'max_mbit_freq': ...,
+'min_mbit_freq': ..., 
+'num_missing_mbits': ..., 
+'ratio_observed_to_expected’: ...,
+}
+<img width="630" height="1161" alt="image" src="https://github.com/user-attachments/assets/24efd3f7-297c-4234-b1bb-cebc3202be06" />
