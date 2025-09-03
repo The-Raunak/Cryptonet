@@ -191,7 +191,7 @@ The method analyzes the distribution of 0s and 1s within sub-blocks of the ciphe
 - Example calculation
 Consider the binary sequence: 1100001111000011110000111100 (n=28) and M=7 (block size)
 So N=4 (Degree of freedom)<br>
-<img width="428" height="277" alt="image" src="https://github.com/user-attachments/assets/5b7adc61-bcd1-4f0d-b2c7-ae7cdc931c80" />
+<img width="428" height="277" alt="image" src="https://github.com/user-attachments/assets/5b7adc61-bcd1-4f0d-b2c7-ae7cdc931c80" /><br>
 &nbsp;<img width="427" height="54" alt="image" src="https://github.com/user-attachments/assets/4032b9e2-4cea-48bd-a6fb-ba3c6c085ee7" />
 
 ### Run test analysis 
