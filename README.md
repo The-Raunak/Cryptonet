@@ -8,8 +8,8 @@ Cryptonet.pdf
 https://anc.org/data/oanc/download/ 
 There are a total of 8085 txt files from source. The available is diverse in terms of length.
 
-## Getting the cipher texts
-<img width="1734" height="1125" alt="image" src="https://github.com/user-attachments/assets/2bf3fb13-364a-4c85-b90d-415926592ffd" />
+## Getting the cipher texts<br>
+<img width="1734" height="1125" alt="image" src="https://github.com/user-attachments/assets/2bf3fb13-364a-4c85-b90d-415926592ffd" /><br>
 Moreover the cipher texts are converted to binary so that machine can process it.
 
 ## Technical aspects of the encryption algorithms
@@ -173,8 +173,8 @@ Algorithm Type: El Gamal Encryption with Custom Implementations
 NIST Document link : (A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications) 
 - https://drive.google.com/file/d/1xFVxq44DxGM1COcbeucTxRZMAJ5Eo20k/view?usp=sharing
 
-### 3 methods and corresponding features
-<img width="477" height="293" alt="image" src="https://github.com/user-attachments/assets/6c05e118-8b19-46ce-85c6-fdf0d03aed0d" />
+### 3 methods and corresponding features<br>
+<img width="477" height="293" alt="image" src="https://github.com/user-attachments/assets/6c05e118-8b19-46ce-85c6-fdf0d03aed0d" /><br>
 
 ## How each feature is extracted?
 ### Frequency within blocks analysis 
@@ -207,7 +207,7 @@ This index looks at consecutive runs of the same bit (0 or 1) in the ciphertext.
   Where r is the observed number of runs.
 - Example calculation
   Consider the binary sequence: 1011010111
-  1. Count runs
+  1. Count runs<br>
   <img width="230" height="150" alt="image" src="https://github.com/user-attachments/assets/fbbcb6cf-f677-4b95-b45f-c43de427c196" /><br>
   Total observed number of runs: 7
   2. Calculate expected runs: n₁ = 7, n₀ = 3, n = 10 e = 1 + (2 * 7 * 3) / 10 = 5.2
@@ -249,7 +249,7 @@ One datapoint is matrix of (B, 21)<br>
 21 features
 <img width="630" height="1161" alt="image" src="https://github.com/user-attachments/assets/24efd3f7-297c-4234-b1bb-cebc3202be06" />
 
-## **Why deep learning? **
+## **Why deep learning?**
 In our research, we opted for a deep learning model instead of a traditional machine learning model due to the complexity and cluttered nature of the features in our dataset. With 21 features, a 3D visualization using techniques like t-SNE and PCA revealed that the feature space was highly non-linear and lacked clear separability. This level of complexity made it challenging for traditional machine learning algorithms to effectively capture the intricate patterns and relationships within the data. 
 
 Deep learning models excel in scenarios where features are high-dimensional and non-linearly correlated, as they are capable of hierarchical feature extraction. This ability to deeply analyze and encode feature interactions is crucial for our dataset, where the underlying structure is obscured in lower dimensions.
@@ -272,11 +272,11 @@ Consequently, the deep learning model significantly outperformed traditional mac
 <img width="1483" height="440" alt="image" src="https://github.com/user-attachments/assets/6ff47ad5-e692-4690-9f15-ea9e080b5311" /><br>
 
 ## **Evaluation results on test set**
-Overall Accuracy: 88.60% 
+Overall Accuracy: 88.60%<br> 
 Average Confidence: 0.83
 ## Per-Class analysis
 <img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" /><br>
-Best Validation Accuracy: 89.17% 
+Best Validation Accuracy: 89.17%<br>
 Best Epoch: 98
 
 
