@@ -246,7 +246,7 @@ Let’s say a binary cipher text is of length N.
 We have taken a block of 128 and generate 21 features as demonstrated in previous section. 
 Total number of blocks = N/128 = B 
 One datapoint is matrix of (B, 21)<br>
-21 features
+21 features<br>
 <img width="630" height="1161" alt="image" src="https://github.com/user-attachments/assets/24efd3f7-297c-4234-b1bb-cebc3202be06" />
 
 ## **Why deep learning?**
@@ -275,7 +275,7 @@ Consequently, the deep learning model significantly outperformed traditional mac
 Overall Accuracy: 88.60%<br> 
 Average Confidence: 0.83
 ## Per-Class analysis
-<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" /><br>
+<img width="1507" height="437" alt="image" src="https://github.com/user-attachments/assets/e2551760-c1b2-4ad2-891c-33e435735779" width=100 /><br>
 Best Validation Accuracy: 89.17%<br>
 Best Epoch: 98
 
