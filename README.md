@@ -208,12 +208,12 @@ This index looks at consecutive runs of the same bit (0 or 1) in the ciphertext.
 - Example calculation
   Consider the binary sequence: 1011010111
   1. Count runs
-  <img width="230" height="150" alt="image" src="https://github.com/user-attachments/assets/fbbcb6cf-f677-4b95-b45f-c43de427c196" />
+  <img width="230" height="150" alt="image" src="https://github.com/user-attachments/assets/fbbcb6cf-f677-4b95-b45f-c43de427c196" /><br>
   Total observed number of runs: 7
   2. Calculate expected runs: n₁ = 7, n₀ = 3, n = 10 e = 1 + (2 * 7 * 3) / 10 = 5.2
   3. Calculate variance: σ² = (2 * 7 * 3 * (2 * 7 * 3 - 10)) / (10² * 9) ≈ 1.29
-  4. Calculate test statistic: Z = (7 - 5.2) / √1.29 ≈ 1.58
-  <img width="222" height="47" alt="image" src="https://github.com/user-attachments/assets/600a0987-fa43-4265-8a2b-676e5c8b8968" />
+  4. Calculate test statistic: Z = (7 - 5.2) / √1.29 ≈ 1.58<br>
+  <img width="222" height="47" alt="image" src="https://github.com/user-attachments/assets/600a0987-fa43-4265-8a2b-676e5c8b8968" /><br>
   <img width="217" height="107" alt="image" src="https://github.com/user-attachments/assets/01e4b055-7fed-4dde-bcf3-816f31907977" />
 
 ### Serial test analysis 
